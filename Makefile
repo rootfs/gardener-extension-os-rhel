@@ -13,9 +13,9 @@
 # limitations under the License.
 
 EXTENSION_PREFIX            := gardener-extension
-NAME                        := os-ubuntu
-REGISTRY                    := eu.gcr.io/gardener-project
-IMAGE_PREFIX                := $(REGISTRY)/extensions
+NAME                        := os-rhel
+REGISTRY                    := docker.io
+IMAGE_PREFIX                := $(REGISTRY)/rootfs
 REPO_ROOT                   := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 HACK_DIR                    := $(REPO_ROOT)/hack
 VERSION                     := $(shell cat "$(REPO_ROOT)/VERSION")

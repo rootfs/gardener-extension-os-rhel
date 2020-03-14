@@ -1,4 +1,4 @@
-module github.com/gardener/gardener-extension-os-ubuntu
+module github.com/gardener/gardener-extension-os-rhel
 
 go 1.13
 
