@@ -12,26 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package app
 
 import (
-	"fmt"
-	"os"
+	"context"
 
-	"github.com/gardener/gardener-extension-os-ubuntu/cmd/gardener-extension-os-ubuntu/app"
+	"github.com/gardener/gardener-extension-os-rhel/pkg/generator"
 
-	extcontroller "github.com/gardener/gardener-extensions/pkg/controller"
-	"github.com/gardener/gardener-extensions/pkg/log"
-	runtimelog "sigs.k8s.io/controller-runtime/pkg/log"
+	"github.com/gardener/gardener-extensions/pkg/controller/cmd"
+	"github.com/gardener/gardener-extensions/pkg/controller/operatingsystemconfig/oscommon/app"
+	"github.com/spf13/cobra"
 )
 
-func main() {
-	runtimelog.SetLogger(log.ZapLogger(false))
-
-	cmd := app.NewControllerCommand(extcontroller.SetupSignalHandlerContext())
-
-	if err := cmd.Execute(); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
-		os.Exit(1)
+// NewControllerCommand returns a new Command with a new Generator
+func NewControllerCommand(ctx context.Context) *cobra.Command {
+	g := generator.CloudInitGenerator()
+	if g == nil {
+		cmd.LogErrAndExit(nil, "Could not create Generator")
 	}
+
+	cmd := app.NewControllerCommand(ctx, "rhel", g)
+
+	return cmd
 }

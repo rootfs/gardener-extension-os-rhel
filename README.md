@@ -1,8 +1,8 @@
 # [Gardener Extension for Ubuntu OS](https://gardener.cloud)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/gardener/gardener-extension-os-ubuntu)](https://goreportcard.com/report/github.com/gardener/gardener-extension-os-ubuntu)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gardener/gardener-extension-os-rhel)](https://goreportcard.com/report/github.com/gardener/gardener-extension-os-rhel)
 
-This controller operates on the [`OperatingSystemConfig`](https://github.com/gardener/gardener/blob/master/docs/proposals/01-extensibility.md#cloud-config-user-data-for-bootstrapping-machines) resource in the `extensions.gardener.cloud/v1alpha1` API group. It manages those objects that are requesting [Ubuntu OS](https://www.ubuntu.com/) configuration (`.spec.type=ubuntu`):
+This controller operates on the [`OperatingSystemConfig`](https://github.com/gardener/gardener/blob/master/docs/proposals/01-extensibility.md#cloud-config-user-data-for-bootstrapping-machines) resource in the `extensions.gardener.cloud/v1alpha1` API group. It manages those objects that are requesting [Ubuntu OS](https://www.rhel.com/) configuration (`.spec.type=rhel`):
 
 ```yaml
 ---
@@ -12,7 +12,7 @@ metadata:
   name: pool-01-original
   namespace: default
 spec:
-  type: ubuntu
+  type: rhel
   units:
     ...
   files:
@@ -55,7 +55,7 @@ Static code checks and tests can be executed by running `VERIFY=true make all`. 
 
 ## Feedback and Support
 
-Feedback and contributions are always welcome. Please report bugs or suggestions as [GitHub issues](https://github.com/gardener/gardener-extension-os-ubuntu/issues) or join our [Slack channel #gardener](https://kubernetes.slack.com/messages/gardener) (please invite yourself to the Kubernetes workspace [here](http://slack.k8s.io)).
+Feedback and contributions are always welcome. Please report bugs or suggestions as [GitHub issues](https://github.com/gardener/gardener-extension-os-rhel/issues) or join our [Slack channel #gardener](https://kubernetes.slack.com/messages/gardener) (please invite yourself to the Kubernetes workspace [here](http://slack.k8s.io)).
 
 ## Learn more!
 

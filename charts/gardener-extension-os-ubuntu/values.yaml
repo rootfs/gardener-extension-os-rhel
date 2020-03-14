@@ -1,5 +1,5 @@
 image:
-  repository: eu.gcr.io/gardener-project/gardener/extensions/os-ubuntu
+  repository: eu.gcr.io/gardener-project/gardener/extensions/os-rhel
   tag: latest
   pullPolicy: IfNotPresent
 

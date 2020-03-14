@@ -27,7 +27,7 @@ var cloudInitGenerator *ostemplate.CloudInitGenerator
 
 func init() {
 	box := packr.New("templates", "./templates")
-	cloudInitTemplateString, err := box.FindString("cloud-init-ubuntu.template")
+	cloudInitTemplateString, err := box.FindString("cloud-init-rhel.template")
 	runtime.Must(err)
 
 	cloudInitTemplate, err := ostemplate.NewTemplate("cloud-init").Parse(cloudInitTemplateString)

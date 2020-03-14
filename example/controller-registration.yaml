@@ -2,11 +2,11 @@
 apiVersion: core.gardener.cloud/v1beta1
 kind: ControllerRegistration
 metadata:
-  name: os-ubuntu
+  name: os-rhel
 spec:
   resources:
   - kind: OperatingSystemConfig
-    type: ubuntu
+    type: rhel
   deployment:
     type: helm
     providerConfig:

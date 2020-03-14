@@ -15,7 +15,7 @@
 package generator_test
 
 import (
-	"github.com/gardener/gardener-extension-os-ubuntu/pkg/generator"
+	"github.com/gardener/gardener-extension-os-rhel/pkg/generator"
 	commongen "github.com/gardener/gardener-extensions/pkg/controller/operatingsystemconfig/oscommon/generator"
 	v1alpha1 "github.com/gardener/gardener/pkg/apis/extensions/v1alpha1"
 	"github.com/onsi/gomega"
